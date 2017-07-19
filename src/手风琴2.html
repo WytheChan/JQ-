@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .container {
+            width:100%;
+            height: 350px;
+            margin: 50px auto;
+            /*border: 1px solid darkblue;*/
+        }
+
+        .container .view {
+            position: relative;
+            float: left;
+            width: 11%;
+            height: 100%;
+            border-right: 1px solid #999;
+        }
+        .container .view:last-child{
+            border: none;
+        }
+        .container .view.active{
+             width: 28%;
+         }
+         .container .view.active h1{
+             display: none;
+         }
+        .container .view img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container .view h1 {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            width: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="view">
+            <img src="img/1.jpg" alt="">
+            <h1>温泉酒店</h1>
+        </div>
+        <div class="view">
+            <img src="img/2.jpg" alt="">
+            <h1>情侣酒店</h1>
+        </div>
+        <div class="view">
+            <img src="img/3.jpg" alt="">
+            <h1>设计师酒店</h1>
+        </div>
+        <div class="view">
+            <img src="img/4.jpg" alt="">
+            <h1>青年旅舍</h1>
+        </div>
+        <div class="view">
+            <img src="img/5.jpg" alt="">
+            <h1>特色客栈</h1>
+        </div>
+        <div class="view">
+            <img src="img/6.jpg" alt="">
+            <h1>海岛酒店</h1>
+        </div>
+        <div class="view">
+            <img src="img/7.jpg" alt="">
+            <h1>海外温泉</h1>
+        </div>
+    </div>
+
+    <script src="js/jQuery.js"></script>
+    <script>
+        $(window).on('load',function(){
+            $('.view:first').addClass('active');
+        })
+        $('.view').hover(function(){ 
+            // $('.view').removeClass('active'); 
+            $(this).find('h1').stop().hide('fast');
+            $(this).stop().animate({
+                width:'28%',
+            },100)
+            $(this).siblings().find('h1').stop().show('fast');
+            $(this).siblings().stop().animate({
+                width:'11%',
+            },100)
+        },function(){
+        });
+    </script>
+</body>
+
+</html>

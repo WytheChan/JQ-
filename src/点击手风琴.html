@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .container .selector{
+            width: 100%;
+            text-align: center;
+        }
+        .container .selector h3{
+            width: 100%;
+            height: 60px;
+             
+            line-height: 60px;
+            font-size: 14px;
+            
+        }
+        .container .selector .text{
+            display: none;
+            width: 100%;
+            height: 180px;
+            padding: 10px;
+            font-size: 14px;
+            box-shadow: 0px -2px 2px #888888;
+            line-height: 16px;
+            text-align: left;
+            text-indent: 2em;
+        }
+        .container .loaction{
+            background: brown;
+        }
+         .container .loaction h3{
+            color: yellow;
+         }
+         .container .loaction .text{
+             color: yellow;
+         }
+          .container .music{
+            background: deeppink;
+        }
+         .container .music h3{
+            color: #fff;
+         }
+         .container .music .text{
+             color: #fff;
+         }
+          .container .nodes{
+            background: burlywood;
+        }
+         .container .nodes h3{
+            color: brown;
+         }
+         .container .nodes .text{
+             color: brown;
+         }
+          .container .books{
+            background: beige;
+        }
+         .container .books h3{
+            color: orange;
+         }
+         .container .books .text{
+             color: orange;
+         }
+          .container .tendantces{
+            background: orangered;
+        }
+         .container .tendantces h3{
+            color: bisque;
+         }
+         .container .tendantces .text{
+             color: bisque;
+         }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="selector loaction">
+            <h3>Loaction</h3>
+            <div class="text">
+                Apple was widely criticized when it originally launched a very buggy and unstable version of Safari for Windows. Things have
+                changed a lot since then however and Safari 5 has come a long way with introductions such as a new Reader
+                icon for easier reading in one page, faster page load times and vastly improved HTML5 support for better
+                video support and stability
+            </div>
+        </div>
+        <div class="selector music">
+            <h3>Music</h3>
+            <div class="text">
+                The UC Browser for PC is one of the UC Browser variants that were created especially for use on desktop computers. It doesn't
+                require a lot of processing power, and it offers a smoother internet experience for people with a slow internet
+                connection. This free browser for Windows is ideally suited for people with low-powered desktop computers
+                and/or people with a slower internet connection.
+            </div>
+        </div>
+        <div class="selector nodes">
+            <h3>Nodes</h3>
+            <div class="text">
+                The most prominent feature is its ad-blocker, which is modern enough to fend off the newest advert types that other browsers
+                allow to sneak through. It has a tabbed interface like many current web browsers, and it has a download manager
+                that allows you to see what is downloading and how far the download has progressed.
+            </div>
+        </div>
+        <div class="selector books">
+            <h3>Books</h3>
+            <div class="text">
+                Since the browser was originally built for mobile devices, there is also a miniature mode that you may use either for your
+                own convenience, or to replicate the experience you have when viewing with a mobile device. If you are accustomed
+                to using Google Chrome, then the symbols you see running across the top of the browser will seem very familiar
+            </div>
+        </div>
+        <div class="selector tendantces">
+            <h3>Tendantces</h3>
+            <div class="text">
+                The browser loads web pages in a way that allows you to browse quickly if you have a slow internet connection. The notifications
+                function needs a tweak, but understanding and accessing the tools is very simple and convenient--especially
+                the download tool that starts automatically when you instigate a download.
+            </div>
+        </div>
+    </div>
+
+<script src="js/jQuery.js"></script>
+<script>
+ $('h3').click(function(){
+     $(this).next().stop().slideToggle('fast');
+     $(this).parent().siblings().find('.text').stop().slideUp('fast');
+ });
+</script>
+
+</body>
+
+</html>

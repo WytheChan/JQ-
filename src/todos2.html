@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任务管理系统</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        input {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #878686;
+        }
+
+        .container {
+            width: 350px;
+            padding-top: 50px;
+        }
+
+        .container table {
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        .container table thead {
+            background: #878686;
+            color: #fff;
+        }
+
+        .container td {
+            border: 1px solid #878686;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" placeholder="请输入任务内容" class="todos-text">
+        <input type="button" value="添加任务" class="todos-btn">
+        <table>
+            <thead>
+                <tr>
+                    <td>任务名称</td>
+                    <td>任务创建时间</td>
+                    <td>是否完成</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!--<tr>
+                    <td class="todoName">
+                        <h3>fdsa</h3>
+                        <div class="text" style="display: none">
+                            <input type="text">
+                            <input type="button" value="保存">
+                            <input type="button" value="取消">
+                        </div>
+                    </td>
+                    <td>2017-5-9 12:27:27</td>
+                    <td>未完成</td>
+                    <td class="remove">删除</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <script src="js/jQuery.js">
+    </script>
+    <script>
+        $(function () {
+            /*
+                每次点击添加任务按钮，或者回车键的时候，就会将文本框输入的内容，以表格的格式添加在tbody里面
+
+
+                今天所学都是要完成这个东西？
+
+                实现  
+                    添加  
+                    删除  
+                    修改  
+            */
+            function add(val) {
+                if (val === '') {
+                    alert('任务内容不能为空');
+                    return;
+                }
+                var tr = $('<tr></tr>');
+                var todoName = $('<td class="todoName"></td>');
+                var h3=$('<h3>').html(val);
+                var text=$('<div class="text" style="display: none"> <input type="text"><input type="button" value="保存"><input type="button" value="取消"></div>');
+                todoName.append(h3,text);    
+                var data = new Date();
+                var todoTime = $('<td></td>').html(data.getFullYear() + '-' + (data.getMonth() + 1) + '-' +
+                    data.getDate() + ' ' + data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds()
+                );
+                var todoState = $('<td></td>').html('未完成');
+                var todoControl = $('<td class="remove"></td>').html('删除');
+                tr.append(todoName, todoTime, todoState, todoControl);
+                $('.container table tbody').append(tr);
+                $('.todos-text').val('');
+            }
+
+            $('table').click(function (e) {
+                var target = e.target;
+                if ($(target).hasClass('remove')) {
+                    $(target).parent().fadeOut(700, function () {
+                        $(target).parent().remove();
+                    });
+                }
+                console.log(target);
+                if (target.tagName.toLowerCase() === 'h3') {
+                    $(target).hide();
+                   
+                    var text = $(target).next();
+                    text.show();
+                    text.find('input[type=text]').val($(target).text());
+                    text.find('input').eq(1).click(function () {
+                        $(target).text(text.find('input[type=text]').val());
+                        text.hide();
+                        $(target).show();
+                    })
+                    text.find('input').eq(2).click(function () {
+                        text.hide();
+                        $(target).show();
+                    })
+                }
+
+
+            })
+            $('.todos-btn').click(function () {
+                add($('.todos-text').val());
+
+            });
+            $(document).keydown(function (event) {
+                if (event.keyCode === 13) {
+                    add($('.todos-text').val());
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

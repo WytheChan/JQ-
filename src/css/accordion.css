@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    margin: 50px auto;
+}
+.clearmr{
+    margin-right: 0;
+}
+.container .view{
+    position: relative;
+    float: left;
+    width: 16.6%;
+    height: 540px;
+    box-shadow: -1px 1px 2px #999;
+    
+}
+
+.container .view.active2{
+    width: 48%;
+    height: 560px;
+}
+.container .view.active {
+    top: -10px;
+}
+.container .view.active .top{
+    background: #3db1ea;
+    height: 170px;
+}
+.container .view.active2 .main{
+    display: block;
+}
+.container .view.active .cover{
+    display: none;
+}
+.container .view .top{
+    width: 100%;
+    height: 160px;
+    background: #1b77b9;
+    text-align: center;
+    padding-top: 25px;
+}
+.container .view .top .top-icon{
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+.container .view .top .node{
+    background: url(../img/new300-sprite-icon.png) no-repeat 0px 0px;  
+}
+.container .view .top .marketing{
+    background: url(../img/new300-sprite-icon.png) no-repeat -40px 0px;  
+}
+.container .view .top .business{
+    background: url(../img/new300-sprite-icon.png) no-repeat -80px 0px;  
+}
+.container .view .top .yun{
+    background: url(../img/new300-sprite-icon.png) no-repeat -120px 0px;  
+}
+.container .view .top h1{
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+.container .view .top .short-info{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #9ed8f5;
+}
+
+
+.container .main{
+    display: none;
+    height: 380px;
+    padding: 30px 30px 0 30px;
+}
+
+.container .main h2{
+    margin-bottom: 20px;
+}
+.container .main h2 a{
+    font-size: 20px;
+    color: #3db1ea;
+}
+.container .main .main-tip{
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.container .main .main-desc{
+    line-height: 20px;
+    font-size: 12px;
+    color: #8c8c8c;
+}
+.container .main .main-btn{
+    width: 160px;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #3db1ea;
+    border-radius: 15px;
+    line-height: 40px;
+    text-align: center;
+    
+}
+.container .main .main-btn a{
+    font-size: 18px;
+    color: #fff;
+}
+.container .main .main-btn:hover{
+   
+    background: #1b77b9;
+     transition: all 0.5s;
+}
+.container .main .other{
+    width: 100%;
+    height: 90px;
+    padding-top: 20px;
+}
+.container .main .other .other-box{
+    display: inline-block;
+    width: 30%;
+    height: 70px;
+    margin-right: 10px;
+    padding-left: 5px;
+    background: #f2f2f2;
+}
+.container .main .other .other-box .other-title{
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.container .main .other .other-box .other-title .other-icon{
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    right: 8px;
+    width: 17px;
+    height: 17px;
+    background: url(../img/new300-sprite-icon.png) no-repeat -200px 0px; 
+}
+.container .main .other .other-box .other-desc{
+    display: block;
+    font-size: 8px;
+    color: #8c8c8c;
+}
+
+.container .main .other .other-box:hover{
+    background: #3db1ea;
+}
+.container .main .other .other-box:hover .other-title,
+.container .main .other .other-box:hover .other-desc{
+    color: #fff;
+}
+.container .main .other .other-box:hover .other-icon{
+    background-position-y: -17px;
+} 
+
+
+
+.container .view .cover{
+    /*display: none;*/
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .2);
+    text-align: center;
+}
+.container .view .cover p{
+    font-size: 18px;
+    
+}
+.container .view .cover .cover-desc-1{
+    margin-top: 270px;
+}
+.container .view .cover .cover-desc-2{
+   margin-top: 20px;
+}
+
